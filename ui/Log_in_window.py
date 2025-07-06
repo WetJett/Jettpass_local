@@ -136,7 +136,8 @@ class Ui_Log_in_window(object):
 
         self.frame = QFrame(Log_in_window)
         self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"background-color: none;")
+        self.frame.setStyleSheet(u"background-color: none; \n" \
+        "border: 0px solid transparent;")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame)

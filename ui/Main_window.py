@@ -146,7 +146,7 @@ class Ui_Jettpass(object):
 
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"background-color:none")
+        self.frame.setStyleSheet(u"background-color:none;" "\n border: 0px solid transparent;")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
 

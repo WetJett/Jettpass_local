@@ -231,7 +231,7 @@ class Ui_View_Edit_entry_window(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.frame = QFrame(View_Edit_entry_window)
         self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"background-color:none;")
+        self.frame.setStyleSheet(u"background-color:none;" "\n border: 5px solid white;")
         self.frame.setFrameShape(QFrame.Shape.HLine)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
 
@@ -262,7 +262,7 @@ class Ui_View_Edit_entry_window(object):
 
         self.frame_2 = QFrame(View_Edit_entry_window)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setStyleSheet(u"background-color:none;")
+        self.frame_2.setStyleSheet(u"background-color:none;" "\n border: 5px solid white;")
         self.frame_2.setFrameShape(QFrame.Shape.HLine)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
 

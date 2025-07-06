@@ -106,7 +106,7 @@ class Ui_Pass_gen_window(object):
 
         self.frame = QFrame(Pass_gen_window)
         self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"background-color: none;")
+        self.frame.setStyleSheet(u"background-color: none;" "\n border: 0px solid transparent;")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
 
@@ -142,7 +142,7 @@ class Ui_Pass_gen_window(object):
 
         self.frame_2 = QFrame(Pass_gen_window)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setStyleSheet(u"background-color: none;")
+        self.frame_2.setStyleSheet(u"background-color: none;" "\n border: 0px solid transparent;")
         self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
 

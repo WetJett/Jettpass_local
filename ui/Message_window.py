@@ -66,7 +66,7 @@ class Ui_Info_message(object):
         self.horizontalLayout.setContentsMargins(15, 15, 15, 15)
         self.frame = QFrame(Info_message)
         self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"background-color:none;")
+        self.frame.setStyleSheet(u"background-color:none;" "\n border: 0px solid transparent;")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
 
@@ -98,7 +98,7 @@ class Ui_Info_message(object):
 
         self.frame_2 = QFrame(Info_message)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setStyleSheet(u"background-color:none;")
+        self.frame_2.setStyleSheet(u"background-color:none;" "\n border: 0px solid transparent;")
         self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
 

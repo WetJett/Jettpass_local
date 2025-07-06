@@ -139,7 +139,7 @@ class Ui_Add_new_pass_window(object):
         self.frame = QFrame(Add_new_pass_window)
         self.frame.setObjectName(u"frame")
         self.frame.setStyleSheet(u"background-color:none;\n"
-"height:40px;")
+"height:40px;" "\n border: 5px solid white;")
         self.frame.setFrameShape(QFrame.Shape.HLine)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.frame.setLineWidth(1)
@@ -176,7 +176,7 @@ class Ui_Add_new_pass_window(object):
         self.frame_2 = QFrame(Add_new_pass_window)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setStyleSheet(u"background-color:none;\n"
-"height:40px;")
+"height:40px;" "\n border: 5px solid white;")
         self.frame_2.setFrameShape(QFrame.Shape.HLine)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
 
