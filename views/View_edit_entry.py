@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QApplication, QDialog
+from PySide6.QtWidgets import QApplication, QDialog, QLineEdit
 from PySide6.QtCore import Signal
 
 from ui.View_Edit_entry_window import Ui_View_Edit_entry_window
@@ -68,6 +68,7 @@ class V_E_entry(QDialog):
     def edit_entry(self):
         self.ui.Login_lineEdit.setReadOnly(False)
         self.ui.Password_lineEdit.setReadOnly(False)
+        self.ui.Password_lineEdit.setEchoMode(QLineEdit.EchoMode.Normal)
      
     def save_changes(self):
         if self.ui.Login_lineEdit.isReadOnly() or self.ui.Password_lineEdit.isReadOnly():

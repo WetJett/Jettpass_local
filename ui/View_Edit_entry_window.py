@@ -122,6 +122,7 @@ class Ui_View_Edit_entry_window(object):
 "height: 30px;\n"
 "font: 700 14pt \"Microsoft YaHei UI\";\n"
 "color:white;")
+        self.Password_lineEdit.setEchoMode(QLineEdit.EchoMode.Password)
         self.Password_lineEdit.setReadOnly(True)
 
         self.gridLayout.addWidget(self.Password_lineEdit, 1, 1, 1, 1)
@@ -231,7 +232,8 @@ class Ui_View_Edit_entry_window(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.frame = QFrame(View_Edit_entry_window)
         self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"background-color:none;" "\n border: 5px solid white;")
+        self.frame.setStyleSheet(u"background-color:none;\n"
+"border: 5px solid white;  ")
         self.frame.setFrameShape(QFrame.Shape.HLine)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
 
@@ -262,7 +264,8 @@ class Ui_View_Edit_entry_window(object):
 
         self.frame_2 = QFrame(View_Edit_entry_window)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setStyleSheet(u"background-color:none;" "\n border: 5px solid white;")
+        self.frame_2.setStyleSheet(u"background-color:none;\n"
+"border: 5px solid white;  ")
         self.frame_2.setFrameShape(QFrame.Shape.HLine)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
 
@@ -285,7 +288,7 @@ class Ui_View_Edit_entry_window(object):
         self.Login_copy_Button.setText("")
         self.label_2.setText(QCoreApplication.translate("View_Edit_entry_window", u"Password:", None))
         self.Password_copy_Button.setText("")
-        self.Edit_Button.setText(QCoreApplication.translate("View_Edit_entry_window", u"Edit", None))
+        self.Edit_Button.setText(QCoreApplication.translate("View_Edit_entry_window", u"Show/Edit", None))
         self.Save_Button.setText(QCoreApplication.translate("View_Edit_entry_window", u"Save", None))
         self.Delete_Button.setText(QCoreApplication.translate("View_Edit_entry_window", u"Delete ", None))
         self.Back_Button.setText(QCoreApplication.translate("View_Edit_entry_window", u"Back", None))
