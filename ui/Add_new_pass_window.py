@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Add_new_pass_window.ui'
+## Form generated from reading UI file 'Add_new_passV1.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.0
 ##
@@ -24,14 +24,14 @@ class Ui_Add_new_pass_window(object):
     def setupUi(self, Add_new_pass_window):
         if not Add_new_pass_window.objectName():
             Add_new_pass_window.setObjectName(u"Add_new_pass_window")
-        Add_new_pass_window.resize(600, 440)
+        Add_new_pass_window.resize(600, 500)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Add_new_pass_window.sizePolicy().hasHeightForWidth())
         Add_new_pass_window.setSizePolicy(sizePolicy)
         Add_new_pass_window.setMinimumSize(QSize(600, 440))
-        Add_new_pass_window.setMaximumSize(QSize(900, 440))
+        Add_new_pass_window.setMaximumSize(QSize(900, 500))
         Add_new_pass_window.setContextMenuPolicy(Qt.ContextMenuPolicy.PreventContextMenu)
         icon = QIcon()
         icon.addFile(u":/icons/icon_main.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -39,9 +39,9 @@ class Ui_Add_new_pass_window(object):
         Add_new_pass_window.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(141, 69, 195, 255), stop:0.427447 rgba(101, 121, 192, 235), stop:1 rgba(215, 139, 225, 255));\n"
 "font-family: Microsoft YaHei UI")
         self.verticalLayout = QVBoxLayout(Add_new_pass_window)
-        self.verticalLayout.setSpacing(20)
+        self.verticalLayout.setSpacing(15)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(30, 30, 30, 30)
+        self.verticalLayout.setContentsMargins(30, 20, 30, 30)
         self.label_4 = QLabel(Add_new_pass_window)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setStyleSheet(u"font: 700 20pt \"Microsoft YaHei UI\";\n"
@@ -123,6 +123,54 @@ class Ui_Add_new_pass_window(object):
 
         self.verticalLayout.addLayout(self.gridLayout)
 
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.frame_4 = QFrame(Add_new_pass_window)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setStyleSheet(u"background-color:none;\n"
+"border: 3px solid white;")
+        self.frame_4.setFrameShape(QFrame.Shape.HLine)
+        self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
+        self.frame_4.setLineWidth(1)
+
+        self.horizontalLayout_4.addWidget(self.frame_4)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.Ignore_this_lbl = QLabel(Add_new_pass_window)
+        self.Ignore_this_lbl.setObjectName(u"Ignore_this_lbl")
+        self.Ignore_this_lbl.setStyleSheet(u"font: 700 12pt \"Microsoft YaHei UI\";\n"
+"background-color: none;\n"
+"color:white;\n"
+"")
+
+        self.horizontalLayout_3.addWidget(self.Ignore_this_lbl)
+
+        self.Strength_label = QLabel(Add_new_pass_window)
+        self.Strength_label.setObjectName(u"Strength_label")
+        self.Strength_label.setStyleSheet(u"font: 700 12pt \"Microsoft YaHei UI\";\n"
+"background-color: none;\n"
+"color:white;\n"
+"")
+
+        self.horizontalLayout_3.addWidget(self.Strength_label)
+
+
+        self.horizontalLayout_4.addLayout(self.horizontalLayout_3)
+
+        self.frame_3 = QFrame(Add_new_pass_window)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setStyleSheet(u"background-color:none;\n"
+"border: 3px solid white;")
+        self.frame_3.setFrameShape(QFrame.Shape.HLine)
+        self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
+        self.frame_3.setLineWidth(1)
+
+        self.horizontalLayout_4.addWidget(self.frame_3)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
+
         self.label_5 = QLabel(Add_new_pass_window)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setStyleSheet(u"font: 700 11pt \"Microsoft YaHei UI\";\n"
@@ -139,7 +187,7 @@ class Ui_Add_new_pass_window(object):
         self.frame = QFrame(Add_new_pass_window)
         self.frame.setObjectName(u"frame")
         self.frame.setStyleSheet(u"background-color:none;\n"
-"height:40px;" "\n border: 5px solid white;")
+"border: 3px solid white;")
         self.frame.setFrameShape(QFrame.Shape.HLine)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.frame.setLineWidth(1)
@@ -176,7 +224,7 @@ class Ui_Add_new_pass_window(object):
         self.frame_2 = QFrame(Add_new_pass_window)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setStyleSheet(u"background-color:none;\n"
-"height:40px;" "\n border: 5px solid white;")
+"border: 3px solid white;")
         self.frame_2.setFrameShape(QFrame.Shape.HLine)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
 
@@ -253,6 +301,8 @@ class Ui_Add_new_pass_window(object):
         self.label_2.setText(QCoreApplication.translate("Add_new_pass_window", u"Login / email:", None))
         self.label_3.setText(QCoreApplication.translate("Add_new_pass_window", u"Password:", None))
         self.label.setText(QCoreApplication.translate("Add_new_pass_window", u"Alias for entry:", None))
+        self.Ignore_this_lbl.setText(QCoreApplication.translate("Add_new_pass_window", u"Password strength:", None))
+        self.Strength_label.setText(QCoreApplication.translate("Add_new_pass_window", u"None", None))
         self.label_5.setText(QCoreApplication.translate("Add_new_pass_window", u"<html><head/><body><p>You can also use password generator to make a strong one</p></body></html>", None))
         self.Generator_Button.setText(QCoreApplication.translate("Add_new_pass_window", u"Generator", None))
         self.Save_Button.setText(QCoreApplication.translate("Add_new_pass_window", u"Save new entry", None))

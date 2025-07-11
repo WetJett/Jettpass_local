@@ -5,6 +5,7 @@ from ui.Add_new_pass_window import Ui_Add_new_pass_window
 from dialogs.Message_dialog import Message
 from views.Pass_generator import Pass_generator
 from logic.dump import add_new_password
+from logic.crypto import is_password_strong
 
 class Add_pass(QDialog):
     
@@ -20,6 +21,29 @@ class Add_pass(QDialog):
         self.ui.Generator_Button.clicked.connect(self.open_generator)
         self.ui.Save_Button.clicked.connect(self.save)
         self.ui.Cancel_Button.clicked.connect(self.cancel)
+        self.ui.Password_lineEdit.textChanged.connect(self.check_strength)
+        
+        self.ok_style =(u"background-color: rgba(255,255,255,30);\n"
+"border: 1px solid rgba(255,255,255,60);\n"
+"border-radius: 4px;\n"
+"height: 30px;\n"
+"font: 700 12pt \"Microsoft YaHei UI\";\n"
+"color:white;")
+        self.weak_style = (u"background-color: rgba(255,0,0,30);\n"
+"border: 1px solid rgba(255,0,0,60);\n"
+"border-radius: 4px;\n"
+"height: 30px;\n"
+"font: 700 12pt \"Microsoft YaHei UI\";\n"
+"color:white;")
+        self.lbl_none_style = (u"font: 700 12pt \"Microsoft YaHei UI\";\n"
+"background-color: none;\n"
+"color:white;")
+        self.lbl_weak_style = (u"font: 700 12pt \"Microsoft YaHei UI\";\n"
+"background-color: none;\n"
+"color:Red;")
+        self.lbl_ok_style = (u"font: 700 12pt \"Microsoft YaHei UI\";\n"
+"background-color: none;\n"
+"color:Green;")
 
     def save(self):
         alias = self.ui.Alias_lineEdit.text()
@@ -48,3 +72,19 @@ class Add_pass(QDialog):
     def open_generator(self):
         self.pass_gen_dialog = Pass_generator()
         self.pass_gen_dialog.exec()
+       
+    def check_strength(self, password_text: str):
+        if password_text == "":
+            self.ui.Password_lineEdit.setStyleSheet(self.ok_style)
+            self.ui.Strength_label.setText("Unknown")
+            self.ui.Strength_label.setStyleSheet(self.lbl_none_style)
+        elif is_password_strong(password_text) is True:
+            self.ui.Password_lineEdit.setStyleSheet(self.ok_style)
+            self.ui.Strength_label.setText("High")
+            self.ui.Strength_label.setStyleSheet(self.lbl_ok_style)
+        else:
+            self.ui.Password_lineEdit.setStyleSheet(self.weak_style)
+            self.ui.Strength_label.setText("Low")
+            self.ui.Strength_label.setStyleSheet(self.lbl_weak_style)
+
+        

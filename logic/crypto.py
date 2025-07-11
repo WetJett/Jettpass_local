@@ -55,7 +55,7 @@ def get_dump_salt(filename: str) -> bytes:
         f.seek(len(MAGIC_NUMBER))
         return f.read(16)
 
-def is_password_strong(password) -> bool:
+def is_password_strong(password: str) -> bool:
     if (len(password) >= 15 and
         re.search(r"[A-Za-z]", password) and
         re.search(r"[0-9]", password) and

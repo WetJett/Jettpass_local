@@ -29,7 +29,7 @@ class Main_window(QMainWindow):
         self.user_key = user_key
         self.user_dump_file = dump_file
         
-        self.all_password_entries: list[PasswordEntry] = [] #Entry list(usualy is loaded only once per session)
+        self.all_password_entries: list[PasswordEntry] = [] #Entry list
 
         self.ui.Add_pass_button.clicked.connect(self.add_password_entry)
         self.ui.Change_m_pass_button.clicked.connect(self.change_m_pass)
