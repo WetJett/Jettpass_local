@@ -117,10 +117,10 @@ def add_new_password(user_dump_file, key, alias, login, password) -> str | None:
     
     if len(al) < 1:
         return "alias_too_short"
-    
+    """
     if_strong = is_password_strong(password)
     if if_strong is not True:
-        return if_strong
+        return if_strong"""
          
     entry_login = login.strip()
     entry_password = password.strip()
