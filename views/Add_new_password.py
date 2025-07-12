@@ -43,7 +43,7 @@ class Add_pass(QDialog):
 "color:Red;")
         self.lbl_ok_style = (u"font: 700 12pt \"Microsoft YaHei UI\";\n"
 "background-color: none;\n"
-"color:Green;")
+"color:rgba(60,255,60,255);")
 
     def save(self):
         alias = self.ui.Alias_lineEdit.text()

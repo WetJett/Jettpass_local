@@ -24,14 +24,14 @@ class Ui_View_Edit_entry_window(object):
     def setupUi(self, View_Edit_entry_window):
         if not View_Edit_entry_window.objectName():
             View_Edit_entry_window.setObjectName(u"View_Edit_entry_window")
-        View_Edit_entry_window.resize(510, 350)
+        View_Edit_entry_window.resize(510, 400)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(View_Edit_entry_window.sizePolicy().hasHeightForWidth())
         View_Edit_entry_window.setSizePolicy(sizePolicy)
-        View_Edit_entry_window.setMinimumSize(QSize(510, 350))
-        View_Edit_entry_window.setMaximumSize(QSize(900, 350))
+        View_Edit_entry_window.setMinimumSize(QSize(510, 400))
+        View_Edit_entry_window.setMaximumSize(QSize(900, 400))
         icon = QIcon()
         icon.addFile(u":/icons/icon_main.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         View_Edit_entry_window.setWindowIcon(icon)
@@ -40,7 +40,7 @@ class Ui_View_Edit_entry_window(object):
         self.verticalLayout = QVBoxLayout(View_Edit_entry_window)
         self.verticalLayout.setSpacing(15)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(15, 15, 15, 15)
+        self.verticalLayout.setContentsMargins(30, 20, 30, 20)
         self.label_3 = QLabel(View_Edit_entry_window)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setStyleSheet(u"font: 700 20pt \"Microsoft YaHei UI\";\n"
@@ -151,6 +151,49 @@ class Ui_View_Edit_entry_window(object):
 
 
         self.verticalLayout.addLayout(self.gridLayout)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.frame_4 = QFrame(View_Edit_entry_window)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setStyleSheet(u"background-color:none;\n"
+"border: 5px solid white;  ")
+        self.frame_4.setFrameShape(QFrame.Shape.HLine)
+        self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
+
+        self.horizontalLayout_3.addWidget(self.frame_4)
+
+        self.Ignore_ths_lbl = QLabel(View_Edit_entry_window)
+        self.Ignore_ths_lbl.setObjectName(u"Ignore_ths_lbl")
+        self.Ignore_ths_lbl.setStyleSheet(u"font: 700 12pt \"Microsoft YaHei UI\";\n"
+"background-color: none;\n"
+"color:white;\n"
+"")
+        self.Ignore_ths_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_3.addWidget(self.Ignore_ths_lbl)
+
+        self.Strength_lbl = QLabel(View_Edit_entry_window)
+        self.Strength_lbl.setObjectName(u"Strength_lbl")
+        self.Strength_lbl.setStyleSheet(u"font: 700 12pt \"Microsoft YaHei UI\";\n"
+"background-color: none;\n"
+"color:white;\n"
+"")
+        self.Strength_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_3.addWidget(self.Strength_lbl)
+
+        self.frame_3 = QFrame(View_Edit_entry_window)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setStyleSheet(u"background-color:none;\n"
+"border: 5px solid white;  ")
+        self.frame_3.setFrameShape(QFrame.Shape.HLine)
+        self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
+
+        self.horizontalLayout_3.addWidget(self.frame_3)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setSpacing(15)
@@ -288,6 +331,8 @@ class Ui_View_Edit_entry_window(object):
         self.Login_copy_Button.setText("")
         self.label_2.setText(QCoreApplication.translate("View_Edit_entry_window", u"Password:", None))
         self.Password_copy_Button.setText("")
+        self.Ignore_ths_lbl.setText(QCoreApplication.translate("View_Edit_entry_window", u"Password strength:", None))
+        self.Strength_lbl.setText(QCoreApplication.translate("View_Edit_entry_window", u"Unknown", None))
         self.Edit_Button.setText(QCoreApplication.translate("View_Edit_entry_window", u"Show/Edit", None))
         self.Save_Button.setText(QCoreApplication.translate("View_Edit_entry_window", u"Save", None))
         self.Delete_Button.setText(QCoreApplication.translate("View_Edit_entry_window", u"Delete ", None))

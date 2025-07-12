@@ -175,10 +175,11 @@ def edit_password(user_dump_file, alias, key, new_url, new_password):
             
             new_url = new_url.strip()
             new_password = new_password.strip()
-            
+            """
             if_strong = is_password_strong(new_password)
             if if_strong is not True:
                return if_strong
+           """    
     
             combined = f"{new_url}@@@{new_password}"
             if len(combined.encode('utf-8')) > CIPHERTEXT_SIZE:
