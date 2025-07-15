@@ -10,6 +10,9 @@ from logic.config import USER_LIST
 
 
 def add_new_user(user_list):
+    """
+    For debug only
+    """
     
     acc1 = Account(
         login="wetjett123@cyber.local",

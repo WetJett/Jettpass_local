@@ -8,9 +8,11 @@ from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from logic.config import SALT_SIZE, PASSWORD_SIZE, IV_SIZE, MAGIC_NUMBER
 
-from PySide6.QtWidgets import QMessageBox, QWidget
 
 def generate_password_hash(password: str) -> tuple[bytes, bytes]:
+    """
+    Making a hash from users password. Using sha512
+    """
     salt = os.urandom(SALT_SIZE)
     hashed_pw = hashlib.pbkdf2_hmac(
         'sha512',
@@ -22,6 +24,9 @@ def generate_password_hash(password: str) -> tuple[bytes, bytes]:
     return hashed_pw, salt
 
 def verify_master_password(password: str, stored_hash: bytes, salt: bytes) -> bool:
+    """
+    Compares hash from users password with hash from file. 
+    """
     derived_hash = hashlib.pbkdf2_hmac( 
         'sha512',
         password.encode('utf-8'),
@@ -31,17 +36,26 @@ def verify_master_password(password: str, stored_hash: bytes, salt: bytes) -> bo
     return hmac.compare_digest(derived_hash, stored_hash) 
 
 def encrypt_data(plaintext: str, key: bytes) -> tuple[bytes, bytes, bytes]:
+    """
+    encrypts data using AES in GCM mode. Returns iv, ciphertext, tag as binary tuple
+    """
     iv = get_random_bytes(IV_SIZE)  # 12 bytes
     cipher = AES.new(key, AES.MODE_GCM, nonce=iv)
     ciphertext, tag = cipher.encrypt_and_digest(plaintext.encode('utf-8'))
     return iv, ciphertext, tag
 
 def decrypt_data(ciphertext: bytes, iv: bytes, tag: bytes, key: bytes) -> str:
+    """
+    Decrypts data using AES in GCM mode. Returns iv, ciphertext, tag as binary tuple
+    """
     cipher = AES.new(key, AES.MODE_GCM, nonce=iv)
     decrypted = cipher.decrypt_and_verify(ciphertext, tag)
     return decrypted.decode('utf-8')
 
 def derive_dump_key(master_password: str, dump_salt: bytes, key_len: int = 32) -> bytes:
+    """
+    Derives key for .dump file decrypting
+    """
     return hashlib.pbkdf2_hmac(
         'sha512',
         master_password.encode('utf-8'),
@@ -51,11 +65,18 @@ def derive_dump_key(master_password: str, dump_salt: bytes, key_len: int = 32) -
     )
 
 def get_dump_salt(filename: str) -> bytes:
+    """
+    Read sailt from users file
+    """
     with open(filename, 'rb') as f:
         f.seek(len(MAGIC_NUMBER))
         return f.read(16)
 
 def is_password_strong(password: str) -> bool:
+    """
+    Checks if password is 15 ch long, contains digit 0-9, 
+    spec. character, and upper-lower case letters
+    """
     if (len(password) >= 15 and
         re.search(r"[A-Za-z]", password) and
         re.search(r"[0-9]", password) and
@@ -66,6 +87,9 @@ def is_password_strong(password: str) -> bool:
 
 
 def generate_password(length: int) -> str:
+    """
+    Generates password that match requiments
+    """
     if length < 4:
         raise ValueError("Password length must be at least 4 to satisfy all character classes.")
 

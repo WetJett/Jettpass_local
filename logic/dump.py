@@ -167,7 +167,7 @@ def delete_password_entry(user_dump_file: str, alias: str):
     shutil.move(tmp_file.name, user_dump_file)
     # print(f"Entry with alias '{alias}' was deleted successfully.")
 
-def edit_password(user_dump_file, alias, key, new_url, new_password):
+def edit_password(user_dump_file: str, alias: str, key: bytes, new_url: str, new_password: str) -> str | None:
     restored = read_dump_entries(user_dump_file)
     for ent in restored:
         if ent.alias == alias:
@@ -201,7 +201,11 @@ def edit_password(user_dump_file, alias, key, new_url, new_password):
             return
     return "entry_edit_error"
             
-def rewrite_dump_file( user_dump_file: str, old_key, new_key, new_salt):
+def rewrite_dump_file( user_dump_file: str, old_key: bytes, new_key: bytes, new_salt: bytes):
+    """
+    Rewrite dump file. Is used on master password has been changed.
+    Encrypts existing entries using new key based on new master password
+    """
     try:
       entries = read_dump_entries(user_dump_file)
     except Exception as e: 
@@ -229,6 +233,9 @@ def rewrite_dump_file( user_dump_file: str, old_key, new_key, new_salt):
       append_dump_entry(user_dump_file, entry)        
         
 def print_entry_info(user_dump_file, key):
+    """
+    For debug only
+    """
     restored = read_dump_entries(user_dump_file)
     for ent in restored:
         data = decrypt_data(ent.encrypted_data, ent.iv, ent.tag, key)
@@ -239,11 +246,17 @@ def print_entry_info(user_dump_file, key):
         print(ent.created)
 
 def print_alias(user_dump_file):
+    """
+    For denug only
+    """
     restored = read_dump_entries(user_dump_file)
     for ent in restored:
         print(ent.alias)
         
 def show_password_and_url(user_dump_file, alias, key):
+    """
+    For debug only
+    """
     restored = read_dump_entries(user_dump_file)
     for ent in restored:
         if ent.alias == alias:
@@ -253,7 +266,10 @@ def show_password_and_url(user_dump_file, alias, key):
     print(f"There is no pasword with alias '{alias}'") 
     return
  
-def check_same_alias(user_dump_file, alias):
+def check_same_alias(user_dump_file : str, alias: str):
+    """
+    Returns True if there is a same alias in .dump file
+    """
     restored = read_dump_entries(user_dump_file)
     for ent in restored:
         if ent.alias == alias:

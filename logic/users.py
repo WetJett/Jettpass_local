@@ -6,6 +6,9 @@ from logic.crypto import generate_password_hash, is_password_strong, derive_dump
 from logic.dump import rewrite_dump_file
 
 def init_users_file_if_missing():
+    """
+    Checks if users.jett file exists, if not - creating a new one.
+    """
     if not os.path.exists(USER_LIST) or os.path.getsize(USER_LIST) < HEADER_SIZE:
         with open(USER_LIST, 'wb') as f:
             f.write(struct.pack('<I', 0))  #sets num of accounts as 0
