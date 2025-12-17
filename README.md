@@ -1,7 +1,7 @@
 # Jettpass_local
 ## In English (short) 
 **Jettpass** is a local, offline password manager with encryption and GUI.  
-It works on Windows 10 and Linux Mint (tested). 
+It works on Windows 10 and Linux Mint, Arch (tested). 
 
 ### Features:
 - Store encrypted password entries
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 python -m views.Main_and_log_in
 ```
 
-  Програма являє собою менеджер паролів, котрий працює локально на вашому пристрої. Додаток сумісний з Windows 10 і Linux Mint (протестовано). 
+  Програма являє собою менеджер паролів, котрий працює локально на вашому пристрої. Додаток сумісний з Windows 10 і Linux Mint, Arch (протестовано). 
   <br></br>
  <div align="center">
   <img width="451" height="429" alt="image" src="https://github.com/user-attachments/assets/3d82dca9-9dd5-49db-951a-72e3ffd211dd" />
